@@ -1,6 +1,6 @@
 # pands-project
 # author :  Manuel Fernandez
-# This folder contains a description and script information about Iris flower dataset [1] [2]
+This folder contains a description and script information about Iris flower dataset [1] [2]
 
 # Introduction and previous works
 
@@ -13,10 +13,17 @@ Throughout the years, other authors had used the dataset to develop they works. 
 # Bibliography:
 
 -[1] http://archive.ics.uci.edu/ml/datasets/Iris
+
 -[2] Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188.
+
 -[3] https://osf.io/u4kb7/
+
 -[4] Hoey, P. S. (2004). Statistical Analysis of the Iris Flower Dataset. University of Massachusetts At Lowell, Massachusetts.
+
 -[5] Abdulkadir, R. A., Imam, K. A., & Jibril, M. B. (2017). Simulation of back propagation neural network for iris flower classification. American Journal of Engineering Research,  6(1),# 200-205.
+
 -[6] Devasena, C. L., Sumathi, T., Gomathi, V. V., & Hemalatha, M. (2011). Effectiveness evaluation of rule based classifiers for the classification of iris data set. Bonfring International Journal of Man Machine Interface, 1(Special Issue Inaugural Special Issue), 05-09.
+
 -[7] V. Borovinskiy, "Classification of Iris data set," University of Ljubljana, Ljubljana, 2009.
+
 -[8] D. Dutta, A. Roy and K. Choudhury, "Training Artificial Neural Network using Particle Swarm Optimization Algorithm," International Journal of Advanced Research in Computer Science and Software Engineering, vol. 3, no. 3, pp. 430-434, 2013
