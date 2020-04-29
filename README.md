@@ -1,16 +1,16 @@
-# pands-project
+# pands-project content
 # author :  Manuel Fernandez
 This folder contains a description and script information about Iris flower dataset [1] [2]
 
-# Introduction and previous works
+## Introduction and previous works
 
 Iris flower dataset is a multivariate dataset firstly introduced by Dr. Ronald Fisher [2]. It can be called Anderson's Iris Data set due Dr. Edgar Anderson's usage of the data to quantify morphologic variation of the three species within [3]. The data shows four attributes (sepal length, sepal width , petal length and petal width) on three different species of the Iris flower. Dr Fisher managed to demonstrate the discriminant analysis, which consisted in given four mesurments to correctly classify a flower. It has been widely accepted in literature as the beginning of predictors creation [4] [5] [6].
 
 Throughout the years, other authors had used the dataset to develop they works. Patryk S. Hoey, analysed the dataset using two different statistical methods, to make a concrete dataset prediction [4] [5]. Vitaly Borovinsky used the dataset to compare three different neural networks, where he found out a better performance on multilayer perceptron than radial basis function network and probabilistic neural network [7]. Dutta D., Roy A. and Choudhury K. demonstrate that the adaptation of neural networks wights using Particle Swarm Optimization (PSO) performed better than Artificail Neural Networks (ANN) solution [8].
 
-# Algorithm 
+## Algorithm 
 
-# Bibliography:
+## Bibliography:
 
 -[1] http://archive.ics.uci.edu/ml/datasets/Iris
 
