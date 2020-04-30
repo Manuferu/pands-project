@@ -12,9 +12,9 @@ Throughout the years, other authors had used the dataset to develop they works. 
 
 The script is breakdown in three parts:
 
-- Within the first one, the script analyse the dataset and creates an output summary of all three classes with their attributes. To do this kind of processes, I have used Python's Pandas library [9], well known to be an effective Data Science tool. Pandas has shown its powerful and useful classes to handle this kind of operations among to give a good cost-efficient performance. To create a description of each class, the scripts uses a Pandas function called describe, which is very handle and quite complete to create some important statistical outputs of a dataframe.
+### Part 1: summary of each variable and output to a single text file
 
-After running this part, the script generates an output called "summary_variables.csv" that can be found in the repository.
+Within the first one, the script analyse the dataset and creates an output summary of all three classes with their attributes. To do this kind of processes, I have used Python's Pandas library [9], well known to be an effective Data Science tool. Pandas has shown its powerful and useful classes to handle this kind of operations among to give a good cost-efficient performance. To create a description of each class, the scripts uses a Pandas function called describe, which is very handle and quite complete to create some important statistical outputs of a dataframe. After running this part, the script generates an output called "summary_variables.csv" that can be found in the repository.
 
 
 ## Bibliography:
