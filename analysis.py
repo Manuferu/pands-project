@@ -6,6 +6,8 @@ import pandas as pd
 from scipy import stats
 import numpy as np
 import matplotlib.pyplot as plt
+import csv
+from csv import writer
 
 
 #Open Iris dataset using panas library (this is considering iris dataset is saved in the same workspace than the script)
@@ -22,31 +24,32 @@ df.set_index("class",inplace=True)
 setosa = df.loc['Iris-setosa']
 versicolor = df.loc['Iris-versicolor']
 virginica = df.loc['Iris-virginica']
-#Save all titles in a list
+# Save all titles in a list
 L = np.array([["setosa","versicolor","virginica"]])
 ### Step 2: Convert each division into a data frame
 s = pd.DataFrame(setosa)
 v = pd.DataFrame(versicolor)
 vi = pd.DataFrame(virginica)
-#### Step 3: produce some statistics for each class and column
-#mean 
-ms = s.mean()
-mv = v.mean()
-mvi = vi.mean()
-#standard deviation
-stds= s.std()
-stdv=v.std()
-stdvi= vi.std()
-#median 
-mes = s.median()
-mev = v.median()
-mevi = vi.median()
+#### Step 3: produce some statistics for each class and column by using pandas function desribe
+descs = s.describe()
+descv = v.describe()
+descvi = vi.describe()
 
+df = descs.merge(descv, how="inner", left_index=True, right_index=True)
+dfall = df.merge(descvi, how="inner", left_index=True, right_index=True)
 
-print(L[0])
+print(dfall)
+### Step 4: I will create a CSV file called data , create headings for each class and put the correspondent data
+
+fields=['first','second','third']
+
+#Export to csv
+dfall.to_csv('test.csv')
+
 #row1 = ['Setosa','Versicolor', 'Virginica']
 #ow2 = [ms,mv,mvi]
-np.savetxt('data.csv', L[0], delimiter=",")
+
+#np.savetxt('data.csv', descv, delimiter=",")
 
 #print(virginica)
 
