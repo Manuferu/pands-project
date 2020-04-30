@@ -11,6 +11,7 @@ from csv import writer
 
 
 #Open Iris dataset using panas library (this is considering iris dataset is saved in the same workspace than the script)
+
 df = pd.read_csv("iris.csv")
 
 #plt.scatter(df['sepal_length'], df['sepal_width'])
@@ -20,45 +21,37 @@ df = pd.read_csv("iris.csv")
 
 #Selection of the rows per each different class using panda's set index and .loc methods
 ### step 1: divide the dataset per each class
+
 df.set_index("class",inplace=True)
-setosa = df.loc['Iris-setosa']
-versicolor = df.loc['Iris-versicolor']
-virginica = df.loc['Iris-virginica']
-# Save all titles in a list
-L = np.array([["setosa","versicolor","virginica"]])
+setosa = df.loc['Iris-setosa'] # dataset only with setosa data
+versicolor = df.loc['Iris-versicolor'] # dataset only with versicolor data
+virginica = df.loc['Iris-virginica'] # dataset only with virginica data
+
 ### Step 2: Convert each division into a data frame
+
 s = pd.DataFrame(setosa)
 v = pd.DataFrame(versicolor)
 vi = pd.DataFrame(virginica)
-#### Step 3: produce some statistics for each class and column by using pandas function desribe
-descs = s.describe()
-descv = v.describe()
-descvi = vi.describe()
 
-df = descs.merge(descv, how="inner", left_index=True, right_index=True)
-dfall = df.merge(descvi, how="inner", left_index=True, right_index=True)
+#### Step 3: produce some statistics for each class and column by using pandas function describe
 
-print(dfall)
-### Step 4: I will create a CSV file called data , create headings for each class and put the correspondent data
+descs = s.describe() #describe for setosa dataframe
+descv = v.describe() #describe for versicolor dataframe
+descvi = vi.describe() # describe for virginica dataframe
 
-fields=['first','second','third']
+#### Step 4 Merge all three dataframes to buid up one dataframe with teh data of all species.I have merged first two and then the result with the third one
 
-#Export to csv
-dfall.to_csv('test.csv')
+dfi = descs.merge(descv, how="inner", left_index=True, right_index=True)
+dfall = dfi.merge(descvi, how="inner", left_index=True, right_index=True)
 
-#row1 = ['Setosa','Versicolor', 'Virginica']
-#ow2 = [ms,mv,mvi]
+#### Step 5 Change the column names to put it more understandable to know which column is refearing to what of the three species. In order to do that
+#### I have added is the name of the specie at the begining of each column.
 
-#np.savetxt('data.csv', descv, delimiter=",")
+dfall.columns = ['setosa_sepal_length', 'setosa_sepal_width','setosa_petal_length', 'setosa_petal_width','versicolor_sepal_length', 'versicolor_sepal_width','versicolor_petal_length', 'versicolor_petal_width','virginica_sepal_length', 'virginica_sepal_width','virginica_petal_length', 'virginica_petal_width']
 
-#print(virginica)
+### As a final stage, as requested by the guidelines of the project, I print it in .csv format
+dfall.to_csv('summary_variables.csv')
 
-#print ("Given Dataframe: \n", d)
-#make a selection by specie
-#Iris-setosa
-
-#setosa = d[d['class'] = "Iris-setosa"]
-#print(setosa)
 
 
 
