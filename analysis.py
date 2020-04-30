@@ -110,5 +110,38 @@ plt.savefig("petal_width_histogram.png")
 #close the plot
 plt.clf()
 
+#####################################################################################################################################################
+####### Part 3:  make scattered plot by pair of variables ###########################################################################################
+#####################################################################################################################################################
 
+# Scatter 1 Sepal length vs sepal width
 
+plt.title("distribution of sepal length and width measurments")
+plt.scatter(df['sepal_length'],df['sepal_width'],c="red", edgecolors="black")
+plt.savefig("distribution_sepal_length_width.png")
+#plt.show()
+plt.clf()
+
+# Scatter 2 petal length vs petal width
+
+plt.title("distribution of petal length and width measurments")
+plt.scatter(df['petal_length'],df['petal_width'],c="black", edgecolors="black")
+plt.savefig("distribution_petal_length_width.png")
+#plt.show()
+plt.clf()
+
+# Scatter 3 sepal length vs petal length
+
+plt.title("distribution of petal length and sepal length measurments")
+plt.scatter(df['petal_length'],df['sepal_length'],c="green", edgecolors="black")
+plt.savefig("distribution_sepal_petal_length.png")
+#plt.show()
+plt.clf()
+
+# Scatter 4 sepal width vs petal width
+
+plt.title("distribution of sepal width and petal width measurments")
+plt.scatter(df['sepal_width'],df['petal_width'],c="blue", edgecolors="black")
+plt.savefig("distribution_sepal_petal_width.png")
+#plt.show()
+plt.clf()
