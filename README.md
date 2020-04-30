@@ -14,7 +14,11 @@ The script is breakdown in three parts:
 
 ### Part 1: summary of each variable and output to a single text file
 
-Within the first one, the script analyse the dataset and creates an output summary of all three classes with their attributes. To do this kind of processes, I have used Python's Pandas library [9], well known to be an effective Data Science tool. Pandas has shown its powerful and useful classes to handle this kind of operations among to give a good cost-efficient performance. To create a description of each class, the scripts uses a Pandas function called describe, which is very handle and quite complete to create some important statistical outputs of a dataframe. After running this part, the script generates an output called "summary_variables.csv" that can be found in the repository.
+Within the part 1 one, the script analyse the dataset and creates an output summary of all three classes with their attributes. To do this kind of processes, I have used Python's Pandas library [9], well known to be an effective Data Science tool. Pandas has shown its powerful and useful classes to handle this kind of operations among to give a good cost-efficient performance. To create a description of each class, the scripts uses a Pandas function called describe, which is very handle and quite complete to create some important statistical outputs of a dataframe. After running this part, the script generates an output called "summary_variables.csv" that can be found in the repository.
+
+### Part 2: histogram of each of variables
+
+In the part 2, I have analysed the data through a histagram analysis. Interesting to see teh pattern how diverse are the pattern of all four variables, specially the pattern of petal width, which shows a total random shape in the histogram distribution. The script makes an histagram of each four variables of the dataset (sepal_length, sepal_width, petal_length, petal_width). To do this part, I have used Python's matplotlib [10]. Matplotlib is a very useful and so intuitive library specialized in data visualization.
 
 
 ## Bibliography:
@@ -36,3 +40,5 @@ Within the first one, the script analyse the dataset and creates an output summa
 -[8] D. Dutta, A. Roy and K. Choudhury, "Training Artificial Neural Network using Particle Swarm Optimization Algorithm," International Journal of Advanced Research in Computer Science and Software Engineering, vol. 3, no. 3, pp. 430-434, 2013
 
 -[9] https://pandas.pydata.org/
+
+- [10] https://matplotlib.org/
