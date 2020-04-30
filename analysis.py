@@ -3,11 +3,9 @@
 
 # import libraries to use further
 import pandas as pd
-from scipy import stats
 import numpy as np
 import matplotlib.pyplot as plt
-import csv
-from csv import writer
+
 
 
 #Open Iris dataset using panas library (this is considering iris dataset is saved in the same workspace than the script)
@@ -15,8 +13,8 @@ from csv import writer
 df = pd.read_csv("iris.csv")
 
 #plt.scatter(df['sepal_length'], df['sepal_width'])
-####################################################################################################################################################
-####### a) First part of the script: outputs a summary of each variable toa  single text file #########################################################
+#####################################################################################################################################################
+####### Part 1: outputs a summary of each variable toa  single text file ############################################################################
 #####################################################################################################################################################
 
 #Selection of the rows per each different class using panda's set index and .loc methods
@@ -52,6 +50,65 @@ dfall.columns = ['setosa_sepal_length', 'setosa_sepal_width','setosa_petal_lengt
 ### As a final stage, as requested by the guidelines of the project, I print it in .csv format
 dfall.to_csv('summary_variables.csv')
 
+#####################################################################################################################################################
+####### Part 2:  make an histogram of each variable to png files ##################################################################################
+#####################################################################################################################################################
+
+# Histogram 1: sepal length of all dataset
+#set the title of the histogram
+plt.title("Sepal length histogram for all dataset")
+#get the column called "sepal_length" from Iris flower dataset
+plt.hist(df['sepal_length'])
+# write the x label
+plt.xlabel('Sepal lenght ')
+# write the y label
+plt.ylabel("Number of cases per length")
+# save the histogram within our workspace
+plt.savefig("Sepal_length_histogram.png")
+#close the plot
+plt.clf()
+
+# Histogram 2: sepal width of all dataset
+#set the title of the histogram
+plt.title("Sepal length histogram for all dataset")
+#get the column called "sepal_width" from Iris flower dataset
+plt.hist(df['sepal_width'])
+# write the x label
+plt.xlabel('Sepal width ')
+# write the y label
+plt.ylabel("Number of cases per length")
+# save the histogram within our workspace
+plt.savefig("Sepal_width_histogram.png")
+#close the plot
+plt.clf()
+
+# Histogram 3: Petal length of all dataset
+#set the title of the histogram
+plt.title("Petal length histogram for all dataset")
+#get the column called "petal_length" from Iris flower dataset
+plt.hist(df['petal_length'])
+# write the x label
+plt.xlabel('petal length ')
+# write the y label
+plt.ylabel("Number of cases per length")
+# save the histogram within our workspace
+plt.savefig("petal_length_histogram.png")
+#close the plot
+plt.clf()
+
+# Histogram 4: petal width of all dataset
+#set the title of the histogram
+plt.title("Petal width histogram for all dataset")
+#get the column called "petal_width" from Iris flower dataset
+plt.hist(df['petal_width'])
+# write the x label
+plt.xlabel('petal width ')
+# write the y label
+plt.ylabel("Number of cases per length")
+# save the histogram within our workspace
+plt.savefig("petal_width_histogram.png")
+#close the plot
+plt.clf()
 
 
 
