@@ -18,7 +18,7 @@ Within the part 1 one, the script analyse the dataset and creates an output summ
 
 ### Part 2: histogram of each of variables
 
-In the part 2, I have analysed the data through a histagram analysis. Interesting to see teh pattern how diverse are the pattern of all four variables, specially the pattern of petal width, which shows a total random shape in the histogram distribution. The script makes an histagram of each four variables of the dataset (sepal_length, sepal_width, petal_length, petal_width). To do this part, I have used Python's matplotlib [10]. Matplotlib is a very useful and so intuitive library specialized in data visualization.
+In the part 2, I have analysed the data through a histagram analysis. Interesting to see teh pattern how diverse are the pattern of all four variables, specially the pattern of petal width, which shows a total random shape in the histogram distribution. The script makes an histagram of each four variables of the dataset (sepal_length, sepal_width, petal_length, petal_width). I have done it by creating a function, since it has to be done the same kind of operation 4 times. By creating a function, I have been able to abstract functionality (Don't repeat yourself principle of software development [11]), modularize it by breaking into small steps, argument passing among many others benefits [12]  To do create the graphics itselfs, I have used Python's matplotlib [10]. Matplotlib is a very useful and so intuitive library specialized in data visualization.
 
 ### Part 3: scatter plot of each pair of variables
 
@@ -46,3 +46,8 @@ In teh part 3, I have performed a scatter plot of each pair of variables. To do 
 -[9] https://pandas.pydata.org/
 
 - [10] https://matplotlib.org/
+
+- [11] https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+
+- [12] https://realpython.com/defining-your-own-python-function/
+
