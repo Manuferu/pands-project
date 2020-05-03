@@ -54,61 +54,27 @@ dfall.to_csv('summary_variables.csv')
 ####### Part 2:  make an histogram of each variable to png files ##################################################################################
 #####################################################################################################################################################
 
-# Histogram 1: sepal length of all dataset
-#set the title of the histogram
-plt.title("Sepal length histogram for all dataset")
-#get the column called "sepal_length" from Iris flower dataset
-plt.hist(df['sepal_length'])
-# write the x label
-plt.xlabel('Sepal lenght ')
-# write the y label
-plt.ylabel("Number of cases per length")
-# save the histogram within our workspace
-plt.savefig("Sepal_length_histogram.png")
-#close the plot
-plt.clf()
+# I have created a function to create histograms. The user has to define the dataset and the column interesting in to representate
 
-# Histogram 2: sepal width of all dataset
-#set the title of the histogram
-plt.title("Sepal length histogram for all dataset")
-#get the column called "sepal_width" from Iris flower dataset
-plt.hist(df['sepal_width'])
-# write the x label
-plt.xlabel('Sepal width ')
-# write the y label
-plt.ylabel("Number of cases per length")
-# save the histogram within our workspace
-plt.savefig("Sepal_width_histogram.png")
-#close the plot
-plt.clf()
+def histograms (dataframe,column):
+    plt.title(column+" histogram for all dataset")
+    plt.hist(dataframe[column])
+    plt.xlabel(column)
+    plt.ylabel("number of cases")
+    plt.savefig(column+"_histogram.png")
+    return plt.clf()
 
-# Histogram 3: Petal length of all dataset
-#set the title of the histogram
-plt.title("Petal length histogram for all dataset")
-#get the column called "petal_length" from Iris flower dataset
-plt.hist(df['petal_length'])
-# write the x label
-plt.xlabel('petal length ')
-# write the y label
-plt.ylabel("Number of cases per length")
-# save the histogram within our workspace
-plt.savefig("petal_length_histogram.png")
-#close the plot
-plt.clf()
+#histogram for column Sepal length
+plsl = histograms(df,'sepal_length')
 
-# Histogram 4: petal width of all dataset
-#set the title of the histogram
-plt.title("Petal width histogram for all dataset")
-#get the column called "petal_width" from Iris flower dataset
-plt.hist(df['petal_width'])
-# write the x label
-plt.xlabel('petal width ')
-# write the y label
-plt.ylabel("Number of cases per length")
-# save the histogram within our workspace
-plt.savefig("petal_width_histogram.png")
-#close the plot
-plt.clf()
+#histogram for column sepal width
+plsw = histograms(df,'sepal_width')
+
+#histogram for column petal length
+plpl = histograms(df,'petal_length')
+
+#histogram for column petal width 
+plpw = histograms(df,'petal_width') 
 
 #####################################################################################################################################################
 ####### Part 3:  make scattered plot by pair of variables ###########################################################################################
