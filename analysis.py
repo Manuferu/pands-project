@@ -58,56 +58,52 @@ dfall.to_csv('summary_variables.csv')
 
 def histograms (dataframe,column):
     plt.title(column+" histogram for all dataset")
-    plt.hist(dataframe[column])    
+    plt.hist(dataframe[column])
     plt.xlabel(column)
     plt.ylabel("number of cases")
     plt.savefig(column+"_histogram.png")
     return plt.clf()
 
 #histogram for column Sepal length
-plsl = histograms(df,'sepal_length')
+histsl = histograms(df,'sepal_length')
 
 #histogram for column sepal width
-plsw = histograms(df,'sepal_width')
+histsw = histograms(df,'sepal_width')
 
 #histogram for column petal length
-plpl = histograms(df,'petal_length')
+histpl = histograms(df,'petal_length')
 
 #histogram for column petal width 
-plpw = histograms(df,'petal_width') 
+histpw = histograms(df,'petal_width') 
 
 #####################################################################################################################################################
 ####### Part 3:  make scattered plot by pair of variables ###########################################################################################
 #####################################################################################################################################################
 
-# Scatter 1 Sepal length vs sepal width
+#I have created a function to automatically do the scatter plots just by in the variable putting dataframe and teh columns you want to scatter plot. In addition, since I have divided previously the data set in
+# 3 datasets each one for each class, I have added to the scatter all of the other datasets, with different marker and simbology. This helps to deeply understand the influence of each specie 
+# in the overall result.  
+# For this part I have checked the site written by Adam Murphy to get inspired (https://blog.finxter.com/matplotlib-scatter-plot/)
 
-plt.title("distribution of sepal length and width measurments")
-plt.scatter(df['sepal_length'],df['sepal_width'],c="red", edgecolors="black")
-plt.savefig("distribution_sepal_length_width.png")
-#plt.show()
-plt.clf()
+def scatter (dataframe,dataframe2,dataframe3, dataframe4,column1,column2,label1,label2,label3,label4):
+    plt.title("distribution of"+ column1 + " and " + column2 + " measurments")
+    plt.scatter(dataframe[column1],dataframe[column2],c='black',edgecolors="black",label=label1)
+    plt.scatter(dataframe2[column1], dataframe2[column2],c='g',marker='+',label=label2)
+    plt.scatter(dataframe3[column1], dataframe3[column2],c='r',marker='^',label=label3)
+    plt.scatter(dataframe4[column1], dataframe4[column2],c='b',marker='*',label=label4)
+    plt.legend(loc='upper left')
+    plt.savefig("distribution_"+column1+ "_"+column2+".png")
+    return plt.clf()
+#scatter 1: scatter comparing sepal_length and sepal_width overall and for each specie. Also include the label I want to see in the legend
+scatslw = scatter(df,s,v,vi,'sepal_length','sepal_width','All classes', 'Iris-setosa', 'Iris-versicolor','Iris-virginica')
 
 # Scatter 2 petal length vs petal width
 
-plt.title("distribution of petal length and width measurments")
-plt.scatter(df['petal_length'],df['petal_width'],c="black", edgecolors="black")
-plt.savefig("distribution_petal_length_width.png")
-#plt.show()
-plt.clf()
+scatplw = scatter(df,s,v,vi,'petal_length','petal_width','All classes', 'Iris-setosa', 'Iris-versicolor','Iris-virginica')
 
 # Scatter 3 sepal length vs petal length
-
-plt.title("distribution of petal length and sepal length measurments")
-plt.scatter(df['petal_length'],df['sepal_length'],c="green", edgecolors="black")
-plt.savefig("distribution_sepal_petal_length.png")
-#plt.show()
-plt.clf()
+scatslpl = scatter(df,s,v,vi,'sepal_length','petal_length','All classes', 'Iris-setosa', 'Iris-versicolor','Iris-virginica')
 
 # Scatter 4 sepal width vs petal width
+scatswpw = scatter(df,s,v,vi,'sepal_width','petal_width','All classes', 'Iris-setosa', 'Iris-versicolor','Iris-virginica')
 
-plt.title("distribution of sepal width and petal width measurments")
-plt.scatter(df['sepal_width'],df['petal_width'],c="blue", edgecolors="black")
-plt.savefig("distribution_sepal_petal_width.png")
-#plt.show()
-plt.clf()
