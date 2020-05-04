@@ -58,7 +58,7 @@ dfall.to_csv('summary_variables.csv')
 
 def histograms (dataframe,column):
     plt.title(column+" histogram for all dataset")
-    plt.hist(dataframe[column])
+    plt.hist(dataframe[column])    
     plt.xlabel(column)
     plt.ylabel("number of cases")
     plt.savefig(column+"_histogram.png")
