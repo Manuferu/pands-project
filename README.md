@@ -22,7 +22,7 @@ In the part 2, I have analysed the data through a histagram analysis. Interestin
 
 ### Part 3: scatter plot of each pair of variables
 
-In teh part 3, I have performed a scatter plot of each pair of variables. To do that, I have used again the library matplotlib [10] with the function scatter. As a result, the script creates 4 outputs of scatter plots showing the distribution with the comparasion of all variables between each other in plots of two components.
+In the part 3, I have performed a scatter plot of each pair of variables. In addition to that, and as an added value in order to understand better the distribution, I have added to the overall distribution, the distribution of the same variables per class. Doing that, we can understand better the influence of each class in teh overall result. To do that, I have used again the library matplotlib [10] with the function scatter. As a result, the script creates 4 outputs of scatter plots showing the distribution with the comparasion of all variables between each other. One of the conclusions we can extract after looking at the plots is the pattern of the Iris-setosa is much difference than the other two (Iris-Virginica, and Iris Versicolor). so we can say that the influence in the overall distribution of the Iris- Setosa deeply affects the overall result, at least more than the other two, where they seem to be more close between each other.(see plots distribution_petal_length_petal_width.png, distribution_sepal_length_petal_length.png, distribution_sepal_length_sepal_width.png, distribution_sepal_width_petal_width.png ) 
 
 
 ## Bibliography:
